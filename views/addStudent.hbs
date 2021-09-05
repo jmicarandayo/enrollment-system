@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="/styles.css">
+    <title>Add Student</title>
+</head>
+<body class="bg-primary">
+    <header class="bg-white">
+        <nav class="d-flex justify-between padding-2 ">
+            <div class="d-flex">
+                <a href="/"><img class="logo"src="images/Logo.svg" alt="Logo"></a>
+                <ul class="d-flex">
+                    <span class="admin text-secondary">Admin</span>
+                </ul>
+            </div>
+            
+            <div class="d-flex text-secondary">
+                
+            
+                <a href="/login" onclick="return confirm('Are you sure you want to logout?');" class="btn-rounded bg-white text-secondary d-flex align-items-center f-semibold"><span class="">Logout</span></a> 
+            </div>
+        </nav>
+        </header>
+    <main class="padding-10">
+    <form action="/auth/addStudent" class="add-student d-flex col text-center" method="POST">
+        <h2>Add Student</h2>
+        <div class="d-flex text-left">
+            <div class="student w-half">
+                <label>ID #</label>
+                <input class="w-full name-input" type="text" id="student_id" name="student_id">
+            </div>
+            <div class="student w-half">
+                <label>Year Level ( 1 - 4 )</label>
+                    <input class="w-full name-input" type="text" id="year_id" name="year_id">
+            </div>
+        </div>
+        <div class="d-flex full-name text-left">
+            
+         <div class="student w-half">
+              <label>First Name</label>
+                <input class="w-full name-input" type="text" id="firstname" name="firstname" placeholder="First Name">
+         </div>
+          <div class="student w-half">
+              <label>Last Name</label>
+                <input class="w-full name-input" type="text" id="lastname" name="lastname" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="d-flex col justify-center">
+            
+                <button class="btn bg-primary" type="submit">Save</button>
+           
+           
+                <a href="/auth/listStudent" class="all-btn bg-edit text-white"> Back</a>
+            
+        </div>
+    </form>
+    
+</main>
+</body>
+</html>

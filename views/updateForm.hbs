@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="/styles.css">
+    <title>Update</title>
+</head>
+<body class="bg-primary">
+    <header class="bg-white">
+        <nav class="d-flex justify-between padding-2 ">
+            <div class="d-flex">
+                <a href="/"><img class="logo"src="/images/Logo.svg" alt="Logo"></a>
+                <ul class="d-flex">
+                    <span class="admin text-secondary">Admin</span>
+                </ul>
+            </div>
+            
+            <div class="d-flex text-secondary">
+                
+            
+                <a href="/login" onclick="return confirm('Are you sure you want to logout?');" class="btn-rounded bg-white text-secondary d-flex align-items-center f-semibold"><span class="">Logout</span></a> 
+            </div>
+        </nav>
+        </header>
+    <main class="padding-5">
+    <form action="/auth/updateStudent/{{user.student_id}}" class="login-register d-flex col text-center" method="POST">
+        <h2>{{title}}</h2>
+        <h4 class="login-text"  >Student ID#: {{user.student_id}}</h4>
+        <div class="d-flex full-name">
+         <div class="student">
+              <label>First Name</label>
+                <input class="w-full name-input" type="text" id="firstname" name="firstname" placeholder="First Name" value="{{user.first_name}}">
+         </div>
+          <div class="student">
+              <label>Last Name</label>
+                <input class="w-full name-input" type="text" id="lastname" name="lastname" placeholder="Last Name" value="{{user.last_name}}">
+          </div>
+        </div>
+        <button class="btn bg-primary" type="submit">Save</button>
+        <a href="/auth/listStudent" class="all-btn bg-edit text-white"> Back</a>
+    </form>
+</main>
+</body>
+</html>

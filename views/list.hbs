@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>List of Students</title>
+</head>
+<body class="bg-primary">
+        <header class="bg-white">
+        <nav class="d-flex justify-between padding-2 ">
+            <div class="d-flex">
+                <a href="/"><img class="logo"src="/images/Logo.svg" alt="Logo"></a>
+                <ul class="d-flex">
+                    <span class="admin text-secondary">Admin</span>
+                </ul>
+            </div>
+            
+            <div class="d-flex text-secondary">
+                
+            
+                <a href="/login" onclick="return confirm('Are you sure you want to logout?');" class="btn-rounded bg-white text-secondary d-flex align-items-center f-semibold" ><span class="">Logout</span></a> 
+            </div>
+        </nav>
+        </header>
+    
+    <main class="padding-5">
+        <div class="list-student">
+            <div class="text-right">
+                <a href="/addStudent" class="f-semibold all-btn bg-secondary">Add Student</a>
+            </div>
+            <h2>{{title}}</h2>
+    <table class="text-secondary">
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Action</th>
+        </tr>
+        {{#each user}}
+        <tr>
+            <td>{{this.student_id}}</td>
+            <td>{{this.first_name}}</td>
+            <td>{{this.last_name}}</td>
+            <td><a href="/auth/updateForm/{{this.student_id}}" class="action all-btn bg-edit text-white">Edit</a> <a href="/auth/deleteStudent/{{this.student_id}}" onclick="return confirm('Are you sure to delete this user?');" class="action all-btn bg-delete text-white">Delete</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    
+        </div>
+        
+    </main>
+</body>
+</html>

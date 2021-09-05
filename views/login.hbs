@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+<body class="bg-primary">
+    <header class="bg-white">
+        <nav class="d-flex justify-between padding-2">
+            <div class="d-flex">
+                <a href="/"><img class="logo"src="images/Logo.svg" alt="Logo"></a>
+                <ul class="d-flex">
+                    <li class="link"><a href="#">About</a></li>
+                    <li class="link"><a href="#">Features</a></li>
+                    <li class="link"><a href="#">Contact</a></li>
+                    <li class="link"><a href="/create">Sign Up</a></li>
+                </ul>
+            </div>
+            <a href="/login" class="btn-rounded bg-white text-secondary d-flex align-items-center f-semibold"><span class="">Login</span><img class="arrow-icon" src="images/Arrow 1.svg" alt="Arrow"></a> 
+        </nav>
+    </header>
+    <main class="padding-10">
+        <form action="/auth/login" method="POST" class="login-register d-flex col text-center">
+            <h1 class="login-text">Login</h1>
+            <div class="message">
+                {{#if message}}
+                <h4 class="">{{message}}</h4>
+                {{/if}}
+            </div>
+            <input type="email" id="email" name="email" placeholder="Email" value="{{email}}">
+            <input type="password" id="password" name="password" placeholder="Password" value="{{password}}">
+            <a href="#" class="forgot-password">Forgot password?</a>
+            <button href="#" class="btn bg-primary">Login</button>
+        </form>
+    </main>
+</body>
+</html>
